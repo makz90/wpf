@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitHubUsers"
         mc:Ignorable="d"
-        Title="GitHub Users" Height="350" Width="500">
+        
+        Title="GitHub Users" Height="650" MinWidth="400" MaxWidth="400">
 
     <Window.Resources>
 

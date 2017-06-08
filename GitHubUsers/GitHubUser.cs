@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using System.Collections.Generic;
 
 namespace GitHubUsers
 {
@@ -13,34 +8,24 @@ namespace GitHubUsers
         public string login { get; set; }
         public string avatar_url { get; set; }
         public string repos_url { get; set; }
-        public List<GitHubRepo> repos
-        {
-            get
-            {
-                //for TESTS
-                //return Utilities.GetReposList(repos_url);
-                return Utilities.GetReposList("http://makz.freevar.com/repos");
-            }
-            set
-            {
-                repos = value;
-            }
-        }
+        public List<GitHubRepo> repos { get; set; }
         public string reposCountString
         {
             get
             {
                 string reposString;
+                if (repos == null) return $"{0} REPOS";
 
-                if(repos.Count  == 1)
+                if (repos.Count == 1)
                 {
                     reposString = "REPO";
-                } else
+                }
+                else
                 {
                     reposString = "REPOS";
                 }
 
-                return string.Format("{0} {1}", repos.Count, reposString);
+                return $"{repos.Count} {reposString}";
             }
             set
             {

@@ -1,32 +1,36 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
-using System;
+﻿using System;
+
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GitHubUsers
 {
     public class Utilities
     {
-        public static List<GitHubUser> GetGitHubUsersList(string url)
+        public async Task<List<T>> GetListOfType<T>(string url)
         {
-            return JsonConvert.DeserializeObject<List<GitHubUser>>(GetJsonResponse(url));
+            var data = await GetJsonResponse(url);
+            return JsonConvert.DeserializeObject<List<T>>(data);
         }
 
-        public static List<GitHubRepo> GetReposList(string url)
+        private async Task<string> GetJsonResponse(string url)
         {
-            return JsonConvert.DeserializeObject<List<GitHubRepo>>(GetJsonResponse(url));
-        }
+            try
+            {
+                var client = new HttpClient();
+                var response = await client.GetStringAsync(url);
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
-        private static string GetJsonResponse(string url)
-        {
-            var client = new RestClient(url);
-            var request = new RestRequest(Method.GET);
-            var response = client.Execute(request);
-
-            return response.Content;
+            return string.Empty;
         }
     }
 }
