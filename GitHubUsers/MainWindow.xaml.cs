@@ -15,7 +15,7 @@ namespace GitHubUsers
 
         private async void LoadData()
         {
-            // When getting use my local json response:
+            // When getting "API rate limit exceeded" error, use my local json response:
             var users = await _utilities.GetListOfType<GitHubUser>("http://makz.freevar.com/users");
             //var users = await _utilities.GetListOfType<GitHubUser>("https://api.github.com/users");
 
