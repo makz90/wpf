@@ -20,9 +20,14 @@ namespace GitHubUsers
         {
             try
             {
-                var client = new HttpClient();
-                var response = await client.GetStringAsync(url);
-                return response;
+                using (var client = new HttpClient())
+                {
+                    using (var r = await client.GetAsync(new Uri(url)))
+                    {
+                        string result = await r.Content.ReadAsStringAsync();
+                        return result;
+                    }
+                }
             }
             catch (Exception e)
             {

@@ -17,5 +17,8 @@ C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\Newtonsoft.Json.xml
 C:\WPF\GitHubUsers\GitHubUsers\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\Refit.dll
 C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\Refit.xml
-C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\RestSharp.dll
-C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\RestSharp.xml
+C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\System.Net.Http.Extensions.dll
+C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\System.Net.Http.Primitives.dll
+C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\System.Net.Http.Extensions.xml
+C:\WPF\GitHubUsers\GitHubUsers\bin\Debug\System.Net.Http.Primitives.xml
+C:\WPF\GitHubUsers\GitHubUsers\obj\Debug\GitHubUsers.csproj.App.config
